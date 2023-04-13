@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 #include <string.h> 
 
@@ -69,8 +70,10 @@ int main() {
     scanf("%d", &numInstances);
 
     // Arrays to store maximum matching size and perfect matching status
-    int maxMatchSize[numInstances];
-    int perfect[numInstances];
+    int *maxMatchSize = malloc(numInstances * sizeof(int));
+    int *perfect = malloc(numInstances * sizeof(int));
+    // int maxMatchSize[numInstances];
+    // int perfect[numInstances];
     int count = 0;
 
     // Loop over each instance
