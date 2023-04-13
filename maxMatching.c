@@ -15,10 +15,12 @@ bool bpm(int u) {
             visited[v] = true;
             if (match[v] < 0 || bpm(match[v])) {
                 match[v] = u;
+
                 return true;
             }
         }
     }
+
     return false;
 }
 
@@ -33,6 +35,7 @@ int max_matching() {
         for (int j = 0; j < numNodesB; j++) {
             visited[j] = false;
         }
+        
         if (bpm(u)) {
             count++;
         }
